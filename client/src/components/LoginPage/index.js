@@ -115,7 +115,7 @@ const LoginPage = () => {
 
     const handleLogin = async () => {
         try {
-            const response = await axios.post("http://172.20.10.11:4000/login", {
+            const response = await axios.post("http://localhost:4000/login", {
                 username: username.trim(), // Ensure no extra spaces
                 password: password.trim(),
             });

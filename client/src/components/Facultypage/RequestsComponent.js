@@ -122,7 +122,7 @@ const RequestsComponent = ({ user }) => {
 
     useEffect(() => {
         axios
-            .post("http://172.20.10.11:4000/api/requestsFilter", { dept: user.username })
+            .post("http://localhost:4000/api/requestsFilter", { dept: user.username })
             .then((response) => {
                 setRequests(response.data);
                 console.log(response.data);
@@ -134,7 +134,7 @@ const RequestsComponent = ({ user }) => {
 
     const handleApprove = (id) => {
         axios
-            .post(`http://172.20.10.11:4000/api/requests/${id}/approve`, { status: "Pending" })
+            .post(`http://localhost:4000/api/requests/${id}/approve`, { status: "Pending" })
             .then((response) => {
                 const updatedRequests = requests.map((req) =>
                     req.id === id ? { ...req, status: "Pending", remarks: "None" } : req
@@ -154,7 +154,7 @@ const RequestsComponent = ({ user }) => {
         const request = requests.find((req) => req.id === id);
         const remarks = request.remarks;
         axios
-            .delete(`http://172.20.10.11:4000/api/requests/${id}/disapproveOten`, {
+            .delete(`http://localhost:4000/api/requests/${id}/disapproveOten`, {
                 remarks,
             })
             .then((response) => {

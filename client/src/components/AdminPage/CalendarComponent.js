@@ -125,7 +125,7 @@ const CalendarComponent = ({ sendDataToParent }) => {
 
     useEffect(() => {
         axios
-            .get("http://172.20.10.11:4000/api/requests?status=Approved")
+            .get("http://localhost:4000/api/requests?status=Approved")
             .then((response) => {
                 setAcceptedRequests(response.data);
             })

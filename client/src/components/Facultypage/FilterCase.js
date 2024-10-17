@@ -42,7 +42,7 @@ const FilterCase = ({ onFilterChange }) => {
 
     useEffect(() => {
         axios
-            .get("http://172.20.10.11:4000/api/category_counts")
+            .get("http://localhost:4000/api/category_counts")
             .then((response) => {
                 setDepartments(response.data.departments);
                 setStatuses(response.data.statuses);
@@ -56,7 +56,7 @@ const FilterCase = ({ onFilterChange }) => {
         setSelectedDepartment(department);
         setSelectedStatuses([]); // Clear selected statuses when department changes
         axios
-            .get(`http://172.20.10.11:4000/api/category_counts?department=${department}`)
+            .get(`http://localhost:4000/api/category_counts?department=${department}`)
             .then((response) => {
                 setStatuses(response.data.statuses);
                 onFilterChange({ department, statuses: [] });

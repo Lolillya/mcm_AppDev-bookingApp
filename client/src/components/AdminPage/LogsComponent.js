@@ -107,7 +107,7 @@ const LogsComponent = () => {
             query.append("statuses", filter.statuses.join(","));
         }
         axios
-            .get(`http://172.20.10.11:4000/api/logs?${query.toString()}`)
+            .get(`http://localhost:4000/api/logs?${query.toString()}`)
             .then((response) => {
                 setLogs(response.data);
             })

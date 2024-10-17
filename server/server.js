@@ -517,5 +517,5 @@ app.post("/api/getCurrentDateShedCar", (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server running on http://172.20.10.11:${port}`);
+    console.log(`Server running on http://localhost:${port}`);
 });

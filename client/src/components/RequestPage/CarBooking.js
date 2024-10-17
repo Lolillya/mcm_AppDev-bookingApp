@@ -439,7 +439,7 @@ const CarBooking = ({ user, disableCarWindow, currentDept }) => {
         };
 
         try {
-            const response = await fetch("http://172.20.10.11:4000/saveCRequest", {
+            const response = await fetch("http://localhost:4000/saveCRequest", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -515,7 +515,7 @@ const CarBooking = ({ user, disableCarWindow, currentDept }) => {
 
         const fetchCurrentDateSchedules = async () => {
             try {
-                const response = await axios.post("http://172.20.10.11:4000/api/getCurrentDateShedCar", {
+                const response = await axios.post("http://localhost:4000/api/getCurrentDateShedCar", {
                     dateOfUse,
                 });
 

@@ -121,7 +121,7 @@ const RequestsComponent = () => {
 
     useEffect(() => {
         axios
-            .get("http://172.20.10.11:4000/api/requests")
+            .get("http://localhost:4000/api/requests")
             .then((response) => {
                 setRequests(response.data);
             })
@@ -132,7 +132,7 @@ const RequestsComponent = () => {
 
     const handleApprove = (id) => {
         axios
-            .post(`http://172.20.10.11:4000/api/requests/${id}/approve`, { status: "Approved" })
+            .post(`http://localhost:4000/api/requests/${id}/approve`, { status: "Approved" })
             .then((response) => {
                 const updatedRequests = requests.map((req) =>
                     req.id === id ? { ...req, status: "Approved", remarks: "" } : req
@@ -152,7 +152,7 @@ const RequestsComponent = () => {
         const request = requests.find((req) => req.id === id);
         const remarks = request.remarks;
         axios
-            .post(`http://172.20.10.11:4000/api/requests/${id}/disapprove`, {
+            .post(`http://localhost:4000/api/requests/${id}/disapprove`, {
                 remarks,
             })
             .then((response) => {

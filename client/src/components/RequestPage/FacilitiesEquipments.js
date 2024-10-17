@@ -674,7 +674,7 @@ const FacilitiesEquipments = ({ user, disableFacilitiesWindow, currentDept }) =>
         };
 
         try {
-            const response = await fetch("http://172.20.10.11:4000/saveRequest", {
+            const response = await fetch("http://localhost:4000/saveRequest", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -743,7 +743,7 @@ const FacilitiesEquipments = ({ user, disableFacilitiesWindow, currentDept }) =>
 
         const fetchCurrentDateSchedules = async () => {
             try {
-                const response = await axios.post("http://172.20.10.11:4000/api/getCurrentDateSched", {
+                const response = await axios.post("http://localhost:4000/api/getCurrentDateSched", {
                     dateOfUse,
                 });
 

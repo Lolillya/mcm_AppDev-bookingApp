@@ -43,7 +43,7 @@ const Requestpage = () => {
 
     const adminOtentification = () => {
         axios
-            .post("http://172.20.10.11:4000/getDeanForUser", {
+            .post("http://localhost:4000/getDeanForUser", {
                 dept: user.dept,
             })
             .then((res) => {
